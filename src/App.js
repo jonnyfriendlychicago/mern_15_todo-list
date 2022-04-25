@@ -15,6 +15,10 @@ import MessageDisplayCmp from './components/MessageDisplayCmp';
 import ColorBoxCommandFormCmp from './components/ColorBoxCommandFormCmp';
 import ColorBoxDisplayCmp from './components/ColorBoxDisplayCmp';
 
+import ToDoFormCmp from './components/ToDoFormCmp'; 
+import ToDoDisplayCmp from './components/ToDoDisplayCmp';
+
+
 
 // people on cards data
 const peopleArr = [
@@ -52,6 +56,10 @@ function App() {
 
   // here is another lifted state for boxes!
   const [boxArrayDeleted, setITboxArrayDeleted] = useState([]);  
+
+  // start of ToDoList
+  const [toDoList, toDoListSet] = useState ([]); 
+
   return (
     <>
     <header>
@@ -74,6 +82,33 @@ function App() {
     </header>
 
     <main className="row_flex_center_top ">
+
+      <div className="row_left" id="toDoApp">
+        <Card style = {{ width: "800px", padding: "10px", border: "2px solid black"}}>
+          {/* now put in calls for content  */}
+          <ToDoFormCmp toDoList = {toDoList} toDoListSet = {toDoListSet}/>
+
+          <Card style={ { width: '700px' , padding: '10px'}} >
+            <h1>Your Tasks</h1>
+            <div  >
+              {toDoList.map((toDo, index) => {
+                return (
+                <ToDoDisplayCmp 
+                key = {index} 
+                index={index} 
+                toDo={toDo} 
+                toDoList={ toDoList } 
+                toDoListSet={toDoListSet}
+                />
+                ) 
+              })}
+
+              </div>
+          </Card>
+
+        </Card>
+      </div>
+
 
       <div className="row_left" id="boxTime">
         <Card style={ { width: '800px' , padding: '10px' }} >

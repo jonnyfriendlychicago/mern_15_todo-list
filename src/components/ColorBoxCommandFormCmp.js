@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Card, Form} from 'react-bootstrap';
+import {Card, Form, Dropdown, DropdownButton} from 'react-bootstrap';
     
 const ColorBoxCommandFormCmp = (props) => {
     
@@ -31,6 +31,19 @@ const ColorBoxCommandFormCmp = (props) => {
                         onChange={ handleColorChange } // mirror earlier des    
                     />
                 </Form.Group>
+                {/* <Form.Select 
+                        style = {{width: '350px', height: '35px'}} 
+                        aria-label="Default select example"
+                        onSelect={ handleColorChange }  >
+                        
+                        <option>Open this select menu</option>
+                        <option value="red">red</option>
+                        <option value="blue">blue</option>
+                        <option value="green">green</option>
+                        value={ formColorFieldValue }
+                        
+
+                </Form.Select> */}
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput202">
                     <Form.Control style={ { width: '150px' }}className ="btn btn-primary" type="submit" value="Add it!" />

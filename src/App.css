@@ -68,6 +68,10 @@ ul {
 
 /* -----------BELOW COPY/PASTE FROM FRIENSHIP -------------------------------------- */
 
+.strikeThru {
+  text-decoration: line-through;
+}
+
 * {
   margin: 0; 
   padding: 0; 
